@@ -1,0 +1,39 @@
+--Average rental rate
+SELECT ROUND(AVG(rental_rate),2) AS avg_rental_rate
+FROM film
+
+-- Average Rental Duration
+SELECT ROUND(AVG(rental_duration),2) AS avg_rental_duration
+FROM film
+
+--Number of customers
+SELECT Count(customer_id) AS number_of_customers
+FROM customer
+
+--Number of countries Rockbusters has customers
+WITH country_vs_customer_cte (country,customer_id) AS 
+(SELECT country.country,
+COUNT(customer.customer_id) AS customer_count
+FROM customer 
+INNER JOIN address ON customer.address_id = address.address_id
+INNER JOIN city ON address.city_id = city.city_id
+INNER JOIN country ON city.country_id = country.country_id
+GROUP BY 1)
+SELECT count(country) AS total_countries
+FROM country_vs_customer_cte
+
+--Most common genre
+WITH films_with_category_cte (film,category) AS
+(SELECT film.title,
+category.name 
+FROM film 
+INNER JOIN film_category ON film.film_id = film_category.film_id
+INNER JOIN category ON film_category.category_id=category.category_id)
+SELECT MODE () WITHIN GROUP (ORDER BY category)
+AS most_common_category
+FROM films_with_category_cte
+
+--Most common rating
+SELECT MODE () WITHIN GROUP (ORDER BY rating)
+AS most_common_rating
+FROM film
