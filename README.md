@@ -30,5 +30,7 @@ and results presented to the management.
   - Do sales figures vary between geographic regions?
 
 - [x] Creating visualizations in Tableau to make the answers being easily understandable for the presentation’s audience
-- [x] Preparing the presentation of the answers with visualizations (link in Tableau for the visualisations
+- [x] Preparing the presentation of the answers with visualizations 
+      [Link to the visualisations in Tableau](https://public.tableau.com/views/3_10_Rockbusters_Business_Case/Story1?:language=en-US&:display_count=n&:origin=viz_share_link)
+
   
