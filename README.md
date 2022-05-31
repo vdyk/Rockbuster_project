@@ -29,7 +29,7 @@ and results presented to the management.
   - Where are customers with a high lifetime value based? 
   - Do sales figures vary between geographic regions?
 
-- [x] Created visualizations in Tableau to make the answers being easily understandable for the presentation’s audience
+- [x] Created visualizations in Tableau to make the answers easier consumable for the presentation’s audience
 - [x] Prepared a presentation of the answers with visualizations 
       [Link to the visualisations in Tableau](https://public.tableau.com/views/3_10_Rockbusters_Business_Case/Story1?:language=en-US&:display_count=n&:origin=viz_share_link)
 
