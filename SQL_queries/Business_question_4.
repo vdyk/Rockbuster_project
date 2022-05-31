@@ -1,0 +1,10 @@
+-- Do sales figures vary between geographic regions?
+SELECT E.country,
+SUM (A.amount) AS Total_Amount_Paid
+FROM payment A
+INNER JOIN customer B ON A.customer_id = B.customer_id
+INNER JOIN address C ON B.address_id = C.address_id
+INNER JOIN city D ON C.city_id = D.city_id
+INNER JOIN country E ON D.country_id = E.country_id
+GROUP BY country
+ORDER BY Total_Amount_Paid DESC
